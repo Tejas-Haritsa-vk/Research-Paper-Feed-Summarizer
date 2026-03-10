@@ -24,3 +24,10 @@ class OllamaAgent(OllamaLLM):
         # prompt = f"Use the following context to answer concisely. \n Include the follwing in answer as a json for each item in list: title: original title from item, summary: brief summary, overview: brief overview on its impact. \n Question: {user_query}\nContext: {context}"
         prompt = f"Use the following context to answer concisely. \n Include the follwing in answer as a json: summary: brief summary, overview: brief overview on its impact. \n Question: {user_query}\nContext: {context}. Do not include explanations, commentary, or follow-up phrases. Always respond in English."
         return self.invoke(prompt)
+    
+    def get_num_tokens(self, text: str) -> int:
+        """Estimate the number of tokens in the given text.
+        This is a simple estimation based on character count.
+        For more accurate counting, use tiktoken or similar library."""
+        # Rough estimation: ~4 characters per token for English text
+        return len(text) // 4

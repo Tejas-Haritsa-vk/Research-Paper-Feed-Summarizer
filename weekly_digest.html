@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Research Digest</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        .stats {
+            background: #f8f9fa;
+            padding: 20px 30px;
+            border-bottom: 1px solid #dee2e6;
+            
+            /* Force the container to fill the card */
+            width: 100%;
+            display: flex;
+            
+            /* Align items to the center */
+            justify-content: center; 
+            align-items: center;
+            
+            /* Space between the two blocks */
+            gap: 60px; 
+            
+            /* Fallback for older renderers */
+            text-align: center;
+        }
+        .stat {
+            /* Ensures items stay side-by-side but centered */
+            display: inline-block;
+            vertical-align: middle;
+            padding: 10px;
+        }
+        .stat-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: #495057;
+        }
+        .stat-label {
+            font-size: 14px;
+            color: #6c757d;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .content {
+            padding: 30px;
+        }
+        .source-section {
+            margin-bottom: 40px;
+        }
+        .source-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .source-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            color: white;
+            margin-right: 12px;
+        }
+        .source-count {
+            color: #6c757d;
+            font-size: 14px;
+        }
+        .paper-card {
+            background: #ffffff;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+        }
+        .paper-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        .paper-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #212529;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        .paper-title a {
+            color: #212529;
+            text-decoration: none;
+        }
+        .paper-title a:hover {
+            color: #667eea;
+        }
+        .paper-meta {
+            font-size: 13px;
+            color: #6c757d;
+            margin-bottom: 12px;
+        }
+        .paper-summary {
+            font-size: 14px;
+            color: #495057;
+            line-height: 1.6;
+        }
+        .footer {
+            background: #f8f9fa;
+            padding: 20px 30px;
+            text-align: center;
+            font-size: 13px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+        }
+        .tldr-section {
+            background: #fdf2f2;
+            border-left: 4px solid #f87171;
+            padding: 20px 30px;
+            margin: 20px 30px 0 30px;
+            border-radius: 4px;
+        }
+        .tldr-title {
+            font-weight: 700;
+            color: #b91c1c;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        .tldr-summary-title {
+            font-weight: 700;
+            color: #b91c1c;
+            margin-bottom: 8px;
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .tldr-overview-title {
+            font-weight: 700;
+            color: #b91c1c;
+            margin-bottom: 8px;
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .tldr-content {
+            font-size: 15px;
+            color: #4b5563;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AI Research Digest</h1>
+            <p>December 28, 2025</p>
+        </div>
+        
+        <!-- DASHBOARD STATS SECTION (Gmail Optimized) -->
+        <div style="background-color: #ffffff; padding: 30px 0; border-bottom: 1px solid #edf2f7; text-align: center;">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto; width: 100%; max-width: 450px;">
+                <tr>
+                    <!-- Papers Stat -->
+                    <td width="49%" style="text-align: center; padding: 0 20px;">
+                        <div style="font-size: 36px; font-weight: 800; color: #2d3748; line-height: 1;">7</div>
+                        <div style="font-size: 11px; font-weight: 700; color: #a0aec0; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 10px;">Papers Found</div>
+                    </td>
+                    <!-- Vertical Divider -->
+                    <td width="1" style="background-color: #e2e8f0; padding: 0;">
+                        <div style="width: 1px; height: 50px; background-color: #e2e8f0; margin: 0 auto;"></div>
+                    </td>
+                    <!-- Sources Stat -->
+                    <td width="49%" style="text-align: center; padding: 0 20px;">
+                        <div style="font-size: 36px; font-weight: 800; color: #2d3748; line-height: 1;">4</div>
+                        <div style="font-size: 11px; font-weight: 700; color: #a0aec0; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 10px;">Unique Sources</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="tldr-section">
+            <div class="tldr-title">🚀 TL;DR (1-2 min read)</div>
+            <div class="tldr-content">Recent research highlights critical advancements in AI across agriculture and broader AI system development. Specifically, a novel attention-enhanced CNN model (CBAM-VGG16) achieves high accuracy in plant disease detection, demonstrating the value of explainable AI in agricultural diagnostics. Simultaneously, a new benchmark, ReX-MLE, reveals significant performance gaps for autonomous coding agents in complex medical imaging tasks, emphasizing the need for domain-aware AI systems. Finally, expanding content transparency tools and on-device AI capabilities through ExecuTorch are furthering the development of verifiable and accessible AI technologies.<br><br></div>
+            <div class="tldr-content">The field is shifting towards more robust and interpretable AI solutions. While traditional CNNs show promise in plant disease detection, the ReX-MLE benchmark underscores a substantial challenge for general-purpose autonomous agents in specialized domains like medical imaging. Furthermore, the development of tools like Gemma Scope 2 and ExecuTorch adoption are crucial for building trust and transparency in AI, particularly as AI agents become increasingly integrated into various applications and workflows.</div>
+        </div>
+        
+        <div class="content">
+
+            <div class="source-section">
+                <div class="source-header">
+                    <span class="source-badge" style="background-color: #B31B1B;">arXiv</span>
+                    <span class="source-count">2 papers</span>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-title">
+                        <a href="http://arxiv.org/abs/2512.17864v1" target="_blank">Interpretable Plant Leaf Disease Detection Using Attention-Enhanced CNN</a>
+                    </div>
+                    <div class="paper-meta">Published: 2025-12-19T18:11:15+00:00</div>
+                    <div class="paper-summary">Interpretable Plant Leaf Disease Detection Using Attention-Enhanced CNN Plant diseases pose a significant threat to global food security, necessitating accurate and interpretable disease detection methods. This study introduces an interpretable attention-guided Convolutional Neural Network (CNN), CB...</div>
+                    <div style="margin-top: 10px;"><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">Attention Mechanisms</span><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">Convolutional Neural Networks (CNNs)</span><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">Plant Disease Detection</span><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">Explainable AI (XAI)</span><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">Agricultural Diagnostics</span></div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-title">
+                        <a href="http://arxiv.org/abs/2512.17838v1" target="_blank">ReX-MLE: The Autonomous Agent Benchmark for Medical Imaging Challenges</a>
+                    </div>
+                    <div class="paper-meta">Published: 2025-12-19T17:44:40+00:00</div>
+                    <div class="paper-summary">ReX-MLE: The Autonomous Agent Benchmark for Medical Imaging Challenges Autonomous coding agents built on large language models (LLMs) can now solve many general software and machine learning tasks, but they remain ineffective on complex, domain-specific scientific problems. Medical imaging is a part...</div>
+                    <div style="margin-top: 10px;"><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">Autonomous Agents</span><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">Medical Imaging</span><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">Large Language Models (LLMs)</span><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">AI Benchmarking</span><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">Domain-Specific AI</span></div>
+                </div>
+            </div>
+
+            <div class="source-section">
+                <div class="source-header">
+                    <span class="source-badge" style="background-color: #4285F4;">Google DeepMind</span>
+                    <span class="source-count">1 paper</span>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-title">
+                        <a href="https://deepmind.google/blog/gemma-scope-2-helping-the-ai-safety-community-deepen-understanding-of-complex-language-model-behavior/" target="_blank">Gemma Scope 2: helping the AI safety community deepen understanding of complex language model behavior</a>
+                    </div>
+                    <div class="paper-meta">Published: Tue, 16 Dec 2025 10:14:24 +0000</div>
+                    <div class="paper-summary">Gemma Scope 2: helping the AI safety community deepen understanding of complex language model behavior Open interpretability tools for language models are now available across the entire Gemma 3 family with the release of Gemma Scope 2....</div>
+                    <div style="margin-top: 10px;"><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">Language Model Interpretability</span><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">AI Safety</span><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">Gemma 3</span><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">Open Source Tools</span></div>
+                </div>
+            </div>
+
+            <div class="source-section">
+                <div class="source-header">
+                    <span class="source-badge" style="background-color: #0F9D58;">Google AI Blog</span>
+                    <span class="source-count">3 papers</span>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-title">
+                        <a href="https://blog.google/technology/ai/ai-tips-2025/" target="_blank">40 of our most helpful AI tips from 2025</a>
+                    </div>
+                    <div class="paper-meta">Published: Fri, 19 Dec 2025 16:00:00 +0000</div>
+                    <div class="paper-summary">40 of our most helpful AI tips from 2025 The image is a dark-themed illustration depicting three people interacting with technology, surrounded by various product icons....</div>
+                    <div style="margin-top: 10px;"><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">Artificial Intelligence (AI)</span><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">Technology Trends</span><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">Future of Technology</span><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">AI Applications</span></div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-title">
+                        <a href="https://blog.google/products/google-cloud/ai-business-trends-report-2026/" target="_blank">5 ways AI agents will transform the way we work in 2026</a>
+                    </div>
+                    <div class="paper-meta">Published: Fri, 19 Dec 2025 14:00:00 +0000</div>
+                    <div class="paper-summary">5 ways AI agents will transform the way we work in 2026 AI agent trends report 2026 graphic...</div>
+                    <div style="margin-top: 10px;"><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">AI Agent Trends</span><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">Future of Work</span><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">Automation</span><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">Artificial Intelligence</span><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">Workplace Transformation</span></div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-title">
+                        <a href="https://blog.google/technology/ai/verify-google-ai-videos-gemini-app/" target="_blank">You can now verify Google AI-generated videos in the Gemini app.</a>
+                    </div>
+                    <div class="paper-meta">Published: Thu, 18 Dec 2025 17:00:00 +0000</div>
+                    <div class="paper-summary">You can now verify Google AI-generated videos in the Gemini app. <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/SynthID_Social.max-600x600.format-webp.webp" />We’re expanding our content transparency tools to help you more easily identify AI-generated content. You can now ...</div>
+                    <div style="margin-top: 10px;"><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">AI Verification</span><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">Content Transparency</span><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">Gemini App</span><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">Synthetic Media</span><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">AI Detection</span></div>
+                </div>
+            </div>
+
+            <div class="source-section">
+                <div class="source-header">
+                    <span class="source-badge" style="background-color: #0668E1;">Meta AI Blog</span>
+                    <span class="source-count">1 paper</span>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-title">
+                        <a href="https://ai.meta.com/blog/executorch-reality-labs-on-device-ai/" target="_blank">ExecuTorch Adoption in Reality Labs: Powering On-Device AI Across Meta Devices</a>
+                    </div>
+                    <div class="paper-meta">Published: N/A</div>
+                    <div class="paper-summary">ExecuTorch Adoption in Reality Labs: Powering On-Device AI Across Meta Devices No summary available...</div>
+                    <div style="margin-top: 10px;"><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">On-Device AI</span><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">Meta Reality Labs</span><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">ExecuTorch</span><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">Edge Computing</span><span style="display: inline-block; background: #e9ecef; color: #495057; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 5px;">AI Hardware</span></div>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="footer">
+            Generated by AI Research Agent • December 28, 2025
+        </div>
+    </div>
+</body>
+</html>

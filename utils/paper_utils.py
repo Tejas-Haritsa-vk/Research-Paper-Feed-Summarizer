@@ -4,7 +4,15 @@ import requests
 from langchain_community.document_loaders import PyMuPDFLoader
 
 class PaperUtils:
-
+    """
+    Utility class for handling research paper PDF retrieval and content extraction.
+    
+    This class provides methods to:
+    - Download PDF files from paper URLs (converting arXiv abs links to pdf).
+    - Sanitize filenames for local storage.
+    - Extract text content from downloaded PDFs using PyMuPDF.
+    - Structure paper data into a consistent document format.
+    """
     def __init__(self):
         self.paper = None
         self.filename = None

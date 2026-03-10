@@ -11,6 +11,8 @@ A focused, repo-specific toolkit that fetches recent research papers from multip
   - send collected summaries/context to an LLM agent for analysis or summarization,
   - return the agent's responses or token-count information.
 - Provides a small demo runner (app.py) and interactive notebooks (Demo.ipynb, Summarize_Paper.ipynb) to try flows locally.
+- Includes a robust Subscriber Management system (SQLite-backed) to support personalized newsletters.
+
 
 ## Key features
 
@@ -27,6 +29,10 @@ A focused, repo-specific toolkit that fetches recent research papers from multip
   - agents/ollama_agent (referenced in main.py) is used to talk to an on-prem or local Ollama instance by default.
   - The agent is expected to provide chat(...) and get_num_tokens(...) methods.
 - Notebooks for interactive exploration and quick experiments.
+- **Subscriber Management**:
+  - `manage_subscribers.py` CLI for adding/listing users.
+  - Personalized filtering based on user topics.
+
 
 ## High-level architecture
 
@@ -83,6 +89,21 @@ Endpoints (examples)
 - POST /summarize_with_llm
   - example: provide `query` and `query_context` (stringified context)
 
+  - example: curl -X POST "http://127.0.0.1:8080/summarize_with_llm" -d "query=Summarize these" -d "query_context=...context..."
+
+- GET /fetch_arxiv
+  - params: query (string), max_results (int), days (int)
+  - example: curl "http://127.0.0.1:8080/fetch_arxiv?query=transformer&max_results=5&days=7"
+
+- GET /fetch_pwc
+  - params: query (string), max_results (int)
+  - example: curl "http://127.0.0.1:8080/fetch_pwc?query=transformer&max_results=5"
+
+- GET /newsletter
+  - params: days (int), format (string), exclude_sent (bool), mark_as_sent (bool), topics (list)
+  - example: curl -X GET "http://127.0.0.1:8080/newsletter" > weekly_digest.html
+  - example: curl -X GET "http://127.0.0.1:8080/newsletter?days=7&format=html&exclude_sent=false&mark_as_sent=false&topics=AI&topics=Deep+Learning" > weekly_digest.html
+
 ## Repository-specific notes
 
 - arXiv client behavior:
@@ -96,6 +117,26 @@ Endpoints (examples)
     - chat(user_query, context) or chat(query, summaries)
     - get_num_tokens(text)
   - If you don't run Ollama locally, modify main.py to initialize an alternative agent (OpenAI, HF, etc.) that exposes the same methods.
+
+## Subscriber Management
+
+This repository now includes a SQLite-based subscriber system to support personalized newsletters.
+
+**CLI Usage**:
+```bash
+# Add a subscriber
+python manage_subscribers.py add user@example.com --topics "AI" "Robotics"
+
+# List subscribers
+python manage_subscribers.py list
+```
+
+**Feed Logic**:
+The `utils/send_feed.py` script automatically fetches papers relevant to each subscriber's topics and sends them a personalized email.
+
+## Utilities
+
+For a detailed breakdown of the utility modules (PDF handling, deduplication, newsletter generation), see [utils/README.md](utils/README.md).
 
 ## Extending and customizing
 
